@@ -22,5 +22,3 @@ docker run -d \
 
 Where:
   - `5235`: Published port of the container (this is where you will reach the server)
-
-  - `888`: Published port of the container (this is where you will find your pages)
