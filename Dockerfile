@@ -12,6 +12,7 @@ ENV VER=3.1.7
 RUN     apk add --no-cache \
              python3 \
              curl \
+             py3-pip \
         && python3 -m pip install --upgrade pip \
         && python3 -m pip install radicale==-$VER passlib[bcrypt]
 
