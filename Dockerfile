@@ -13,6 +13,7 @@ RUN     apk add --no-cache --virtual=junk \
         gcc \
         python3-dev \
         musl-dev \
+        libffi-dev \
         && apk add --no-cache \
              python3 \
              curl \
