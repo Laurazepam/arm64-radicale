@@ -25,7 +25,8 @@ RUN     apk add --no-cache --virtual=junk \
 HEALTHCHECK --interval=45s --retries=5 CMD curl --fail http://localhost:5232 || exit 1
 
 VOLUME  /etc/radicale/config \
-        /var/lib/radicale/collections
+        /var/lib/radicale/collections \
+        /usr
 
 COPY    start /usr/local/bin/start 
 COPY    config /etc/radicale/config/config
