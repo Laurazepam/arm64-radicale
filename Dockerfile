@@ -9,12 +9,15 @@ FROM    alpine:latest
 
 ENV VER=3.1.7
 
-RUN     apk add --no-cache \
+RUN     apk add --no-cache --virtual=junk \
+        gcc \
+        && apk add --no-cache \
              python3 \
              curl \
              py3-pip \
         && python3 -m pip install --upgrade pip \
-        && python3 -m pip install radicale==$VER passlib[bcrypt]
+        && python3 -m pip install radicale==$VER passlib[bcrypt] \
+        && apk del --purge junk
 
 HEALTHCHECK --interval=45s --retries=5 CMD curl --fail http://localhost:5232 || exit 1
 
