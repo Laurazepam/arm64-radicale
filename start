@@ -1,2 +1,3 @@
 #!/bin/bash
+mv -n /mytemp/config /etc/radicale/config/config
 exec radicale
