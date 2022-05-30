@@ -14,7 +14,7 @@ RUN     apk add --no-cache \
              curl \
              py3-pip \
         && python3 -m pip install --upgrade pip \
-        && python3 -m pip install radicale==-$VER passlib[bcrypt]
+        && python3 -m pip install radicale-$VER passlib[bcrypt]
 
 HEALTHCHECK --interval=45s --retries=5 CMD curl --fail http://localhost:5232 || exit 1
 
