@@ -25,7 +25,7 @@ RUN     apk update \
              curl \
              py3-pip \
         && rm -rf /var/cache/apk/* && \
-             /tmp/*
+        && rm -rf /tmp/*
         
 RUN python3 -m pip install --upgrade pip \
         && python3 -m pip install wheel \
