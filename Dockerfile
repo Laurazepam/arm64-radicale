@@ -11,6 +11,7 @@ ENV VER=3.1.7
 
 RUN     apk add --no-cache --virtual=junk \
         gcc \
+        python3-dev \
         && apk add --no-cache \
              python3 \
              curl \
