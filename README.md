@@ -16,9 +16,11 @@ Launch the lighttpd docker container with the following command:
 ```
 docker run -d \
     --name=radicale \
-    -p 5235:5235 \
+    -p 5232:5232 \
+    -v /docker/radicale/config/:/etc/radicale/config/:rw \
+    -v /docker/radicale/data/:/var/lib/radicale/collections/:ro \
     laurazepam/arm64-radicale
 ```
 
 Where:
-  - `5235`: Published port of the container (this is where you will reach the server)
+  - `5232`: Published port of the container (this is where you will reach the server)

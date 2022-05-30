@@ -1,3 +1,4 @@
 #!/bin/sh
 mv -n /mytemp/config /etc/radicale/config/config
+rm -rf /mytemp
 exec radicale --config /etc/radicale/config/config

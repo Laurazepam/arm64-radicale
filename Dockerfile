@@ -23,7 +23,8 @@ RUN     apk update \
         && apk add --no-cache \
              python3 \
              curl \
-             py3-pip
+             py3-pip \
+             apache2-utils
         
 RUN python3 -m pip install --upgrade pip \
         && python3 -m pip install wheel \
