@@ -23,16 +23,16 @@ RUN     apk update \
         && apk add --no-cache \
              python3 \
              curl \
-             py3-pip \
-        && rm -rf /var/cache/apk/* \
-        && rm -rf /tmp/*
+             py3-pip
         
 RUN python3 -m pip install --upgrade pip \
         && python3 -m pip install wheel \
         && python3 -m pip install radicale==$VER passlib[bcrypt] \
         && python3 -m pip uninstall -y wheel \
         && apk del --purge junk \
-        && mkdir /mytemp
+        && mkdir /mytemp \
+        && rm -rf /var/cache/apk/* \
+        && rm -rf /tmp/*
 
 HEALTHCHECK --interval=45s --retries=5 CMD curl --fail http://localhost:5232 || exit 1
 
