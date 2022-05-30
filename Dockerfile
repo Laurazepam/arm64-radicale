@@ -23,12 +23,14 @@ RUN     apk update \
         && apk add --no-cache \
              python3 \
              curl \
-             py3-pip
+             py3-pip \
+        && rm -rf /var/cache/apk/* && \
+             /tmp/*
         
 RUN python3 -m pip install --upgrade pip \
         && python3 -m pip install wheel \
         && python3 -m pip install radicale==$VER passlib[bcrypt] \
-        && python3 -m pip uninstall wheel \
+        && python3 -m pip uninstall -y wheel \
         && apk del --purge junk \
         && mkdir /mytemp
 
