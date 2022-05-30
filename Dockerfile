@@ -5,7 +5,7 @@
 #
 
 # Pull base image.
-FROM    arm64v8/node:current-alpine3.15
+FROM    alpine:latest
 
 ENV VER=3.1.7
 
