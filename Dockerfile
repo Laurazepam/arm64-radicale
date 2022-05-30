@@ -7,12 +7,12 @@
 # Pull base image.
 FROM    alpine:latest
 
-ENV VER=3.1.7
+ENV     VER=3.1.7
 
 WORKDIR /temp
 
-RUN rm -rf /var/cache/apk/* && \
-    rm -rf /tmp/*
+RUN     rm -rf /var/cache/apk/* && \
+        rm -rf /tmp/*
 
 RUN     apk update \
         && apk add --no-cache --virtual=junk \
@@ -26,25 +26,26 @@ RUN     apk update \
              py3-pip \
              apache2-utils
         
-RUN python3 -m pip install --upgrade pip \
-        && python3 -m pip install wheel \
-        && python3 -m pip install radicale==$VER passlib[bcrypt] \
-        && python3 -m pip uninstall -y wheel \
-        && apk del --purge junk \
-        && mkdir /mytemp \
-        && rm -rf /var/cache/apk/* \
-        && rm -rf /tmp/*
+RUN     python3 -m pip install --upgrade pip \
+                && python3 -m pip install wheel \
+                && python3 -m pip install radicale==$VER passlib[bcrypt] \
+                && python3 -m pip uninstall -y wheel \
+                && apk del --purge junk \
+                && mkdir /mytemp \
+                && rm -rf /var/cache/apk/* \
+                && rm -rf /tmp/*
 
 HEALTHCHECK --interval=45s --retries=5 CMD curl --fail http://localhost:5232 || exit 1
 
 VOLUME  /etc/radicale/config \
-        /var/lib/radicale/collections
+        /var/lib/radicale/collections \
+        /users
 
 COPY    start /usr/local/bin/start 
 COPY    config /mytemp/config
         
-RUN chmod +x /usr/local/bin/start
+RUN     chmod +x /usr/local/bin/start
 
-CMD ["start"]
+CMD     ["start"]
 
 EXPOSE 5232
