@@ -11,15 +11,15 @@ ENV VER=3.1.7
 
 WORKDIR /temp
 
-#TEMPORARY WORKAROUND
-RUN sed -i 's/https/http/' /etc/apk/repositories
-#TEMPORARY WORKAROUND
+RUN rm -rf /var/cache/apk/* && \
+    rm -rf /tmp/*
 
-RUN     apk add --no-cache --virtual=junk \
-        gcc \
-        python3-dev \
-        musl-dev \
-        libffi-dev \
+RUN     apk update \
+        && apk add --no-cache --virtual=junk \
+           gcc \
+           python3-dev \
+           musl-dev \
+           libffi-dev \
         && apk add --no-cache \
              python3 \
              curl \
