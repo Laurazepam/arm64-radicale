@@ -25,6 +25,7 @@ RUN     apk add --no-cache --virtual=junk \
              curl \
              py3-pip \
         && python3 -m pip install --upgrade pip \
+        && python3 -m pip install wheel \
         && python3 -m pip install radicale==$VER passlib[bcrypt] \
         && apk del --purge junk \
         && mkdir /mytemp
