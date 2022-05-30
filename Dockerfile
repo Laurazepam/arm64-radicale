@@ -11,6 +11,10 @@ ENV VER=3.1.7
 
 WORKDIR /temp
 
+#TEMPORARY WORKAROUND
+RUN sed -i 's/https/http/' /etc/apk/repositories
+#TEMPORARY WORKAROUND
+
 RUN     apk add --no-cache --virtual=junk \
         gcc \
         python3-dev \
