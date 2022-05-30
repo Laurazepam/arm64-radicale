@@ -42,6 +42,6 @@ COPY    config /mytemp/config
         
 RUN chmod +x /usr/local/bin/start
 
-CMD ["bash"]
+CMD ["start"]
 
 EXPOSE 5232
