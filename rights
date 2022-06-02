@@ -1,0 +1,14 @@
+[rw_root]
+user: .+
+collection:
+permissions: rRwW
+
+[rw_self]
+user: .+
+collection: {user}
+permissions: rRwW
+
+[rw_self_sub]
+user: .+
+collection: {user}/[^/]+
+permissions: rRwW
