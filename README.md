@@ -1,7 +1,7 @@
 # arm64 Docker container for radicale
 [![Docker Image Size](https://img.shields.io/docker/image-size/laurazepam/arm64-radicale/latest)](https://hub.docker.com/repository/docker/laurazepam/arm64-radicale/tags) [![GitHub Release](https://img.shields.io/github/v/release/Laurazepam/arm64-radicale?color=orange)](https://github.com/Laurazepam/arm64-radicale/releases/latest) [![Docker Pulls](https://img.shields.io/docker/pulls/laurazepam/arm64-radicale?color=purple)](https://hub.docker.com/r/laurazepam/arm64-radicale) [![Maintained](https://img.shields.io/maintenance/yes/2022)]()
 
-This is an arm64 compatible Docker container for [radicale](https://www.lradicale.org/).
+This is an arm64 compatible Docker container for [radicale](https://www.radicale.org/).
 
 ---
 
