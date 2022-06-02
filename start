@@ -1,4 +1,5 @@
 #!/bin/sh
 mv -n /mytemp/config /etc/radicale/config/config
+mv -n /mytemp/rights /users/rights
 rm -rf /mytemp
 exec radicale --config /etc/radicale/config/config

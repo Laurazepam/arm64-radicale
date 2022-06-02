@@ -43,6 +43,7 @@ VOLUME  /etc/radicale/config \
 
 COPY    start /usr/local/bin/start 
 COPY    config /mytemp/config
+COPY    rights /mytemp/rights
         
 RUN     chmod +x /usr/local/bin/start
 
