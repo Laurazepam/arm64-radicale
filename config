@@ -14,3 +14,7 @@ htpasswd_filename = /users/.htpasswd
 htpasswd_encryption = bcrypt
 # Average delay after failed login attempts in seconds
 delay = 1
+
+[rights]
+type=from_file
+file=/users/rights
